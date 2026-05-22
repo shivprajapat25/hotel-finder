@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HotelXplore – Aapke Paas Ke Hotels</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&family=Noto+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <header>
+    <div class="logo">🏨 HotelXplore</div>
+    <p class="tagline">Kahi bhi jao – Best hotels aur ghoomne ki jagah ek click mein</p>
+  </header>
+
+  <section class="search-section">
+    <div class="search-box">
+      <input type="text" id="cityInput" placeholder="Shahar ka naam likhein... (jaise: Jaipur, Mumbai)" />
+      <button id="searchBtn">🔍 Dhundho</button>
+      <button id="locationBtn">📍 Meri Location</button>
+    </div>
+  </section>
+
+  <div class="filter-tabs" id="filterTabs" style="display:none">
+    <button class="tab active" data-type="hotel">🏨 Hotels</button>
+    <button class="tab" data-type="tourist">🗺️ Tourist Places</button>
+    <button class="tab" data-type="restaurant">🍽️ Restaurants</button>
+  </div>
+
+  <div id="loader" class="loader" style="display:none">
+    <div class="spinner"></div>
+    <p>Dhoondh raha hoon... ⏳</p>
+  </div>
+
+  <section id="resultsSection" style="display:none">
+    <h2 id="resultsTitle">Results</h2>
+    <div id="resultsGrid" class="results-grid"></div>
+  </section>
+
+  <div id="mapContainer" style="display:none">
+    <h2 class="map-title">🗺️ Map View</h2>
+    <div id="map"></div>
+  </div>
+
+  <div id="noResults" class="no-results" style="display:none">
+    <p>😕 Koi result nahi mila. Dobaara koshish karein.</p>
+  </div>
+
+  <footer>
+    <p>Made with ❤️ | Data from OpenStreetMap</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
