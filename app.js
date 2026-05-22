@@ -69,7 +69,7 @@ document.querySelectorAll('.tab').forEach(tab => {
 async function geocodeCity(cityName) {
   showLoader();
   try {
-    const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(cityName)}&format=json&limit=1`;
+    const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(cityName)}&format=json&limit=1&countrycodes=in`;
     const res = await fetch(url, { headers: { 'Accept-Language': 'hi,en' } });
     const data = await res.json();
     if (!data.length) { hideLoader(); showNoResults(); return; }
